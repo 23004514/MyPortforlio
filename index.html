@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mulaudzi Konanani | Portfolio</title>
-
-    <!-- Icons -->
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-
-        /* RESET */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -26,10 +22,8 @@
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
-            overflow-x: hidden;
         }
 
-        /* HEADER */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -42,64 +36,19 @@
         }
 
         header p {
-            font-size: 1.1rem;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             font-weight: 500;
         }
 
         .profile-photo {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #007acc;
-            margin-top: 20px;
         }
 
-        /* NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #007acc;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #004d99;
-        }
-
-        #dark-mode-toggle {
-            background-color: #007acc;
-            border: none;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: #004d99;
-        }
-
-        /* SECTION TITLES */
         section h2 {
             font-size: 2rem;
             color: #007acc;
@@ -108,77 +57,117 @@
             padding-bottom: 5px;
         }
 
-        /* ARTICLE / PROJECT CARDS */
         article {
             background-color: #fff;
             border-radius: 8px;
-            padding: 18px 22px;
+            padding: 15px 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        article:hover {
-            transform: translateY(-6px);
         }
 
         article h3 {
-            margin-bottom: 8px;
             color: #004d99;
+            margin-bottom: 8px;
         }
 
-        .project-link {
-            display: inline-block;
-            margin-top: 8px;
-            background: #007acc;
-            padding: 8px 14px;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .project-link:hover {
-            background: #004d99;
-        }
-
-        /* SKILLS */
-        .skills span {
-            display: inline-block;
-            background: #007acc;
-            color: white;
-            padding: 6px 12px;
-            margin: 4px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* SOCIAL ICONS */
-        .social-header, .social-footer {
-            margin: 15px 0;
+        /* Nav */
+        nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .social-header a, 
-        .social-footer a {
-            font-size: 1.8rem;
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
             color: #007acc;
-            transition: 0.3s ease;
+            font-weight: 600;
         }
 
-        .social-header a:hover,
-        .social-footer a:hover {
+        nav a:hover {
             color: #004d99;
-            transform: scale(1.2);
         }
 
-        /* FOOTER */
+				/* Social Icons */
+		.social-header, .social-footer {
+		    margin: 15px 0;
+		    display: flex;
+		    justify-content: center;
+		    gap: 20px;
+		}
+		
+		.social-header a, 
+		.social-footer a {
+		    font-size: 1.8rem;
+		    color: #007acc;
+		    transition: 0.3s ease;
+		}
+		
+		.social-header a:hover,
+		.social-footer a:hover {
+		    color: #004d99;
+		    transform: scale(1.2);
+		}
+		
+		/* Dark mode for icons */
+		body.dark-mode .social-header a,
+		body.dark-mode .social-footer a {
+		    color: #bb86fc;
+		}
+		
+		body.dark-mode .social-header a:hover,
+		body.dark-mode .social-footer a:hover {
+		    color: #9a6ef0;
+		}
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #eee;
+        }
+
+        body.dark-mode header h1,
+        body.dark-mode section h2,
+        body.dark-mode article h3,
+        body.dark-mode nav a,
+        body.dark-mode footer {
+            color: #bb86fc;
+        }
+
+        body.dark-mode article {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 8px rgba(187, 134, 252, 0.4);
+        }
+
+        #dark-mode-toggle {
+            background-color: #007acc;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: #004d99;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
-            padding-top: 25px;
+            padding-top: 20px;
             border-top: 1px solid #ddd;
         }
 
@@ -190,70 +179,12 @@
         footer a:hover {
             color: #004d99;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* DARK MODE */
-        body.dark-mode {
-            background-color: #121212;
-            color: #eee;
-        }
-
-        body.dark-mode header h1,
-        body.dark-mode section h2,
-        body.dark-mode article h3,
-        body.dark-mode nav a,
-        body.dark-mode footer,
-        body.dark-mode p {
-            color: #bb86fc;
-        }
-
-        body.dark-mode .skills span {
-            background: #bb86fc;
-            color: #121212;
-        }
-
-        body.dark-mode article {
-            background-color: #1e1e1e;
-            box-shadow: 0 2px 8px rgba(187, 134, 252, 0.4);
-        }
-
-        body.dark-mode .project-link {
-            background-color: #bb86fc;
-            color: #121212;
-        }
-
-        body.dark-mode .project-link:hover {
-            background-color: #9a6ef0;
-        }
-
-        body.dark-mode .social-header a,
-        body.dark-mode .social-footer a {
-            color: #bb86fc;
-        }
-
-        /* FADE IN ANIMATION */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
     </style>
 </head>
 
 <body>
 
-    <header class="fade-in">
+    <header>
         <h1>Welcome to My Portfolio</h1>
 
         <nav>
@@ -263,69 +194,63 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
+            <button id="dark-mode-toggle">Toggle Dark Mode</button>
         </nav>
 
-        <p>Hello! I'm <strong>Mulaudzi Konanani</strong>, a passionate Software Engineer and Web Developer driven by curiosity, creativity, and a love for building meaningful technology.</p>
+		<p>Hello! I'm Mulaudzi Konanani, a passionate software engineer and Web Developer driven by curiosity and creativity .</p>
+		
+		<div class="social-header">
+		    <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
+		    <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
+		</div>
+		
+		<img src="Kowny.jpg" alt="MyPhoto" class="profile-photo" />
 
-        <div class="social-header">
-            <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-
-        <img src="Kowny.jpg" alt="My Profile Photo" class="profile-photo fade-in" />
     </header>
 
     <!-- ABOUT -->
-    <section id="about-me" class="fade-in">
+    <section id="about-me">
         <h2>About Me</h2>
-        <p>I'm currently studying Computer Science at the University of Venda.</p>
-        <p>Here are some of the tools and languages I work with:</p>
-
-        <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>Java</span>
-            <span>JavaScript</span>
-        </div>
-
-        <p>My goal is to become a skilled Software Engineer and Web Developer capable of creating powerful and modern digital solutions.</p>
+        <p>Academic Background: I'm currently studying Computer Science at University of Venda.</p>
+        <p>Skills and Tools: HTML, JAVA, CSS</p>
+        <p>Goal: To be a software engineer and Web Developer</p>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="fade-in">
+    <section id="projects">
         <h2>Projects</h2>
 
         <article>
-            <h3>Digital Time App</h3>
-            <p>A Java-based digital clock application with a clean UI.</p>
-            <p><strong>Tools:</strong> Java</p>
+            <h3>Project One</h3>
+            <p>A fun Digital Time App using JAVA and Web Application using HTML/CSS for UI.</p>
+            <p>Tools used: Java Application</p>
         </article>
 
         <article>
-            <h3>My First Website</h3>
-            <p>A beginner-friendly site built using HTML & CSS.</p>
-            <p><strong>Tools:</strong> HTML, CSS</p>
+            <h3>Project Two</h3>
+            <p>My First Website</p>
+            <p>Tools used: HTML & CSS</p>
         </article>
 
         <article>
-            <h3>DealDeck Website</h3>
-            <p>A product-based website built to showcase high-quality deals.</p>
+            <h3>Project Three</h3>
+            <p>DealDeck website</p>
             <a href="https://23004514.github.io/DEALDECK/" class="project-link" target="_blank">Visit DealDeck</a>
-            <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
+            <p>Tools used: HTML, CSS & JavaScript</p>
         </article>
     </section>
 
     <!-- CONTACT -->
-    <footer id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:23004514@mvula.univen.ac.za">23004514@mvula.univen.ac.za</a></p>
-
-        <div class="social-footer">
-            <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
+	<footer id="contact">
+	    <h2>Contact</h2>
+	
+	    <p>Email: 23004514@mvula.univen.ac.za</p>
+	
+	    <div class="social-footer">
+	        <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
+	        <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
+	    </div>
+	</footer>
 
     <script>
         document.getElementById('dark-mode-toggle').onclick = () =>
@@ -333,10 +258,7 @@
     </script>
 
 </body>
-
 </html>
-
-
 
 
 
