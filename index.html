@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <style>
         /* Reset */
         * {
@@ -22,6 +21,7 @@
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -47,6 +47,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #007acc;
+            margin-top: 15px;
         }
 
         section h2 {
@@ -63,11 +64,30 @@
             padding: 15px 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         article h3 {
             color: #004d99;
             margin-bottom: 8px;
+        }
+
+        /* Project links */
+        .project-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 8px 16px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .project-link:hover {
+            background-color: #004d99;
+            transform: translateY(-2px);
         }
 
         /* Nav */
@@ -77,55 +97,62 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
             text-decoration: none;
             color: #007acc;
             font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
         nav a:hover {
             color: #004d99;
+            background-color: rgba(0, 122, 204, 0.1);
         }
 
-				/* Social Icons */
-		.social-header, .social-footer {
-		    margin: 15px 0;
-		    display: flex;
-		    justify-content: center;
-		    gap: 20px;
-		}
-		
-		.social-header a, 
-		.social-footer a {
-		    font-size: 1.8rem;
-		    color: #007acc;
-		    transition: 0.3s ease;
-		}
-		
-		.social-header a:hover,
-		.social-footer a:hover {
-		    color: #004d99;
-		    transform: scale(1.2);
-		}
-		
-		/* Dark mode for icons */
-		body.dark-mode .social-header a,
-		body.dark-mode .social-footer a {
-		    color: #bb86fc;
-		}
-		
-		body.dark-mode .social-header a:hover,
-		body.dark-mode .social-footer a:hover {
-		    color: #9a6ef0;
-		}
+        /* Social Icons */
+        .social-header, .social-footer {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-header a, 
+        .social-footer a {
+            font-size: 1.8rem;
+            color: #007acc;
+            transition: transform 0.3s ease, color 0.3s;
+        }
+        
+        .social-header a:hover,
+        .social-footer a:hover {
+            color: #004d99;
+            transform: scale(1.2);
+        }
+        
+        /* Dark mode for icons */
+        body.dark-mode .social-header a,
+        body.dark-mode .social-footer a {
+            color: #bb86fc;
+        }
+        
+        body.dark-mode .social-header a:hover,
+        body.dark-mode .social-footer a:hover {
+            color: #9a6ef0;
+        }
 
         /* Dark Mode */
         body.dark-mode {
@@ -135,15 +162,40 @@
 
         body.dark-mode header h1,
         body.dark-mode section h2,
-        body.dark-mode article h3,
-        body.dark-mode nav a,
-        body.dark-mode footer {
+        body.dark-mode footer h2 {
             color: #bb86fc;
+            border-bottom-color: #bb86fc;
+        }
+
+        body.dark-mode article h3 {
+            color: #9a6ef0;
+        }
+
+        body.dark-mode nav a {
+            color: #bb86fc;
+        }
+
+        body.dark-mode nav a:hover {
+            color: #9a6ef0;
+            background-color: rgba(187, 134, 252, 0.1);
         }
 
         body.dark-mode article {
             background-color: #1e1e1e;
-            box-shadow: 0 2px 8px rgba(187, 134, 252, 0.4);
+            box-shadow: 0 2px 8px rgba(187, 134, 252, 0.2);
+        }
+
+        body.dark-mode .profile-photo {
+            border-color: #bb86fc;
+        }
+
+        body.dark-mode .project-link {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+
+        body.dark-mode .project-link:hover {
+            background-color: #9a6ef0;
         }
 
         #dark-mode-toggle {
@@ -154,14 +206,26 @@
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         #dark-mode-toggle:hover {
             background-color: #004d99;
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode #dark-mode-toggle {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+
+        body.dark-mode #dark-mode-toggle:hover {
+            background-color: #9a6ef0;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 20px;
         }
 
         footer {
@@ -171,6 +235,10 @@
             border-top: 1px solid #ddd;
         }
 
+        body.dark-mode footer {
+            border-top-color: #444;
+        }
+
         footer a {
             color: #007acc;
             text-decoration: none;
@@ -178,6 +246,46 @@
 
         footer a:hover {
             color: #004d99;
+        }
+
+        body.dark-mode footer a {
+            color: #bb86fc;
+        }
+
+        body.dark-mode footer a:hover {
+            color: #9a6ef0;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid #007acc;
+            outline-offset: 2px;
+        }
+
+        body.dark-mode a:focus,
+        body.dark-mode button:focus {
+            outline-color: #bb86fc;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 10px;
+            }
+            
+            body {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -189,22 +297,22 @@
 
         <nav>
             <ul>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about-me" aria-label="Go to About Me section">About Me</a></li>
+                <li><a href="#projects" aria-label="Go to Projects section">Projects</a></li>
+                <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
             </ul>
 
-            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">Toggle Dark Mode</button>
         </nav>
 
-		<p>Hello! I'm Mulaudzi Konanani, a passionate software engineer and Web Developer driven by curiosity and creativity .</p>
-		
-		<div class="social-header">
-		    <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
-		    <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
-		</div>
-		
-		<img src="Kowny.jpg" alt="MyPhoto" class="profile-photo" />
+        <p>Hello! I'm Mulaudzi Konanani, a passionate software engineer and Web Developer driven by curiosity and creativity.</p>
+        
+        <div class="social-header">
+            <a href="https://github.com/23004514" target="_blank" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <img src="Kowny.jpg" alt="Photo of Mulaudzi Konanani" class="profile-photo" />
 
     </header>
 
@@ -238,28 +346,80 @@
             <a href="https://23004514.github.io/DEALDECK/" class="project-link" target="_blank">Visit DealDeck</a>
             <p>Tools used: HTML, CSS & JavaScript</p>
         </article>
+
+        <article>
+            <h3>Project Four</h3>
+            <p>BarCode</p>
+            <a href="https://23004514.github.io/BarCode/" class="project-link" target="_blank">Visit BarCode</a>
+            <p>Tools used: HTML, CSS & JavaScript</p>
+        </article>
+		
+		     <article>
+            <h3>Project Five</h3>
+            <p>QRCode</p>
+            <a href="https://23004514.github.io/QR-CODE/" class="project-link" target="_blank">Visit QRCode</a>
+            <p>Tools used: HTML, CSS & JavaScript</p>
+        </article>
     </section>
 
     <!-- CONTACT -->
-	<footer id="contact">
-	    <h2>Contact</h2>
-	
-	    <p>Email: 23004514@mvula.univen.ac.za</p>
-	
-	    <div class="social-footer">
-	        <a href="https://github.com/23004514" target="_blank"><i class="fab fa-github"></i></a>
-	        <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank"><i class="fab fa-linkedin"></i></a>
-	    </div>
-	</footer>
+    <footer id="contact">
+        <h2>Contact</h2>
+    
+        <p>Email: 23004514@mvula.univen.ac.za</p>
+    
+        <div class="social-footer">
+            <a href="https://github.com/23004514" target="_blank" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mulaudzi-konanani-b9b3ab383" target="_blank" aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
 
     <script>
-        document.getElementById('dark-mode-toggle').onclick = () =>
-            document.body.classList.toggle('dark-mode');
+        // Dark mode toggle with localStorage persistence
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        const darkModePreference = localStorage.getItem('darkMode');
+        
+        if (darkModePreference === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = 'Toggle Light Mode';
+        }
+        
+        darkModeToggle.onclick = () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update button text and save preference
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Toggle Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeToggle.textContent = 'Toggle Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        };
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 
 </body>
 </html>
-
 
 
 
