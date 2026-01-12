@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mulaudzi Konanani | Software Engineer & Web Developer</title>
+    <title>Mulaudzi Konanani | Software Engineer & Cybersecurity Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,8 @@
             --primary: #2a6df5;
             --primary-dark: #1a56d4;
             --secondary: #ff6b6b;
+            --cyber-green: #00d26a;
+            --cyber-purple: #8a2be2;
             --dark: #1a1a2e;
             --light: #f8f9fa;
             --gray: #6c757d;
@@ -64,7 +66,7 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, #0d1529 100%);
             color: white;
             padding: 100px 0 60px;
             position: relative;
@@ -78,8 +80,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(42, 109, 245, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(42, 109, 245, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 210, 106, 0.05) 0%, transparent 70%);
             z-index: 0;
         }
 
@@ -94,7 +98,7 @@
         .header-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(90deg, #fff, #a5d8ff);
+            background: linear-gradient(90deg, #fff, #00d26a, #a5d8ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -130,7 +134,7 @@
 
         .profile-photo:hover {
             transform: scale(1.05);
-            border-color: var(--primary);
+            border-color: var(--cyber-green);
         }
 
         /* Navigation */
@@ -139,7 +143,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(26, 26, 46, 0.95);
+            background: rgba(13, 21, 41, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -161,7 +165,7 @@
         }
 
         .logo span {
-            color: var(--primary);
+            color: var(--cyber-green);
         }
 
         .nav-links {
@@ -187,7 +191,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--cyber-green);
             transition: width 0.3s ease;
         }
 
@@ -197,7 +201,7 @@
         }
 
         .nav-links a:hover {
-            color: #a5d8ff;
+            color: var(--cyber-green);
         }
 
         .theme-toggle {
@@ -254,7 +258,7 @@
             display: block;
             width: 70px;
             height: 4px;
-            background: var(--primary);
+            background: var(--cyber-green);
             margin: 10px auto;
             border-radius: 2px;
         }
@@ -263,6 +267,88 @@
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 60px 0;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category.cybersecurity {
+            border-top-color: var(--cyber-green);
+        }
+
+        .skill-category.networking {
+            border-top-color: var(--cyber-purple);
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .skill-category h3 i {
+            font-size: 1.5rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(42, 109, 245, 0.3);
+        }
+
+        .skill-tag.cyber {
+            background: var(--cyber-green);
+        }
+
+        .skill-tag.network {
+            background: var(--cyber-purple);
+        }
+
+        .skill-tag i {
+            font-size: 0.9rem;
         }
 
         /* About Section */
@@ -279,26 +365,70 @@
             color: var(--dark);
         }
 
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
+        /* Certifications Section */
+        .certifications {
+            background: linear-gradient(135deg, #0d1529 0%, #1a1a2e 100%);
+            color: white;
         }
 
-        .skill-tag {
-            background: var(--primary);
+        .certifications .section-title h2 {
             color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.9rem;
+        }
+
+        .certifications .section-title h2::after {
+            background: var(--cyber-green);
+        }
+
+        .certifications .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
 
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(42, 109, 245, 0.3);
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyber-green);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-card h3 {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 i {
+            color: var(--cyber-green);
+        }
+
+        .cert-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--cyber-green);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         /* Projects Section */
@@ -326,12 +456,37 @@
 
         .project-img {
             height: 200px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.9;
+        }
+
+        .project-img.cyber-bg::before {
+            background: linear-gradient(135deg, var(--cyber-green) 0%, #0d1529 100%);
+        }
+
+        .project-img.network-bg::before {
+            background: linear-gradient(135deg, var(--cyber-purple) 0%, #0d1529 100%);
+        }
+
+        .project-img i {
+            position: relative;
+            z-index: 1;
         }
 
         .project-content {
@@ -369,6 +524,16 @@
             font-weight: 500;
         }
 
+        .tool-tag.cyber {
+            background: rgba(0, 210, 106, 0.1);
+            color: var(--cyber-green);
+        }
+
+        .tool-tag.network {
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--cyber-purple);
+        }
+
         .project-links {
             display: flex;
             gap: 1rem;
@@ -395,15 +560,33 @@
             box-shadow: 0 5px 15px rgba(42, 109, 245, 0.3);
         }
 
+        .project-link.cyber {
+            background: var(--cyber-green);
+        }
+
+        .project-link.cyber:hover {
+            background: #00b85c;
+            box-shadow: 0 5px 15px rgba(0, 210, 106, 0.3);
+        }
+
         .project-link.secondary {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
         }
 
+        .project-link.secondary.cyber {
+            color: var(--cyber-green);
+            border-color: var(--cyber-green);
+        }
+
         .project-link.secondary:hover {
             background: var(--primary);
             color: white;
+        }
+
+        .project-link.secondary.cyber:hover {
+            background: var(--cyber-green);
         }
 
         /* Contact Section */
@@ -442,6 +625,10 @@
             font-size: 1.2rem;
         }
 
+        .contact-icon.cyber {
+            background: var(--cyber-green);
+        }
+
         .social-links {
             display: flex;
             gap: 1rem;
@@ -463,7 +650,7 @@
         }
 
         .social-link:hover {
-            background: var(--primary);
+            background: var(--cyber-green);
             transform: translateY(-5px);
         }
 
@@ -495,7 +682,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--cyber-green);
         }
 
         .copyright {
@@ -517,6 +704,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
         /* Dark Mode */
         body.dark-mode {
             background-color: #121212;
@@ -536,6 +733,10 @@
         }
 
         body.dark-mode .project-card {
+            background: #2a2a2a;
+        }
+
+        body.dark-mode .skill-category {
             background: #2a2a2a;
         }
 
@@ -563,6 +764,10 @@
             .projects-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
+            
+            .skills-categories {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -583,7 +788,7 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: rgba(26, 26, 46, 0.98);
+                background: rgba(13, 21, 41, 0.98);
                 flex-direction: column;
                 padding: 20px;
                 transform: translateY(-100%);
@@ -642,6 +847,8 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
@@ -660,7 +867,7 @@
                 <img src="Kowny.jpg" alt="Photo of Mulaudzi Konanani" class="profile-photo">
                 <div>
                     <h1>Mulaudzi Konanani</h1>
-                    <p class="subtitle">Software Engineer & Web Developer</p>
+                    <p class="subtitle">Software Engineer, Cybersecurity Specialist & Web Developer</p>
                 </div>
             </div>
             
@@ -674,11 +881,14 @@
                 <a href="mailto:23004514@mvula.univen.ac.za" aria-label="Email" class="social-link">
                     <i class="fas fa-envelope"></i>
                 </a>
+                <a href="https://tryhackme.com/p/mulaudziknnn" aria-label="TryHackMe" class="social-link" title="TryHackMe Profile">
+                    <i class="fas fa-shield-alt"></i>
+                </a>
             </div>
             
             <p class="text-center mt-2" style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">
-                Passionate software engineer and web developer currently studying Computer Science at University of Venda. 
-                Driven by curiosity, creativity, and a desire to build meaningful digital solutions.
+                Passionate software engineer and cybersecurity specialist currently studying Computer Science at University of Venda. 
+                Skilled in secure software development, network security, and building resilient digital solutions.
             </p>
         </div>
     </header>
@@ -688,59 +898,154 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
-                <p>Get to know more about my background, skills, and aspirations</p>
+                <p>Secure by design, built with precision</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>My Journey in Tech</h3>
+                    <h3>My Cybersecurity Journey</h3>
                     <p>
-                        I'm currently pursuing a Computer Science degree at the University of Venda, 
-                        where I'm building a strong foundation in software development, algorithms, 
-                        and computer systems. My academic journey has fueled my passion for creating 
-                        innovative digital solutions that solve real-world problems.
+                        I'm currently pursuing a Computer Science degree with a focus on cybersecurity at the University of Venda. 
+                        My journey in tech has evolved from basic programming to understanding the critical importance of secure 
+                        systems design and network protection.
                     </p>
                     <p>
-                        Beyond academics, I spend my time exploring new technologies, working on 
-                        personal projects, and continuously expanding my skill set. I believe in 
-                        lifelong learning and staying updated with industry trends.
+                        I believe that security shouldn't be an afterthought but an integral part of the development process. 
+                        My approach combines solid software engineering principles with security-first thinking to build 
+                        applications that are not only functional but also resilient against threats.
                     </p>
                     
                     <div class="mt-2">
-                        <h4>Technical Skills</h4>
-                        <div class="skills-container">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Responsive Design</span>
-                            <span class="skill-tag">Git & GitHub</span>
-                            <span class="skill-tag">Problem Solving</span>
-                            <span class="skill-tag">UI/UX Principles</span>
-                        </div>
+                        <h4>Security Philosophy</h4>
+                        <ul style="padding-left: 20px; margin-bottom: 1.5rem; color: #555;">
+                            <li><strong>Defense in Depth:</strong> Implementing multiple security layers</li>
+                            <li><strong>Least Privilege:</strong> Minimum necessary access principles</li>
+                            <li><strong>Secure Development Lifecycle:</strong> Security at every phase</li>
+                            <li><strong>Continuous Monitoring:</strong> Proactive threat detection</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="about-text">
                     <h3>Career Aspirations</h3>
                     <p>
-                        My goal is to become a proficient software engineer and web developer who 
-                        creates impactful, user-centered applications. I'm particularly interested in:
+                        My goal is to become a security-focused software engineer who bridges the gap between development 
+                        and cybersecurity. I'm particularly interested in:
                     </p>
                     <ul style="padding-left: 20px; margin-bottom: 1.5rem; color: #555;">
-                        <li><strong>Full-Stack Development:</strong> Building complete web applications from frontend to backend</li>
-                        <li><strong>Clean Code:</strong> Writing maintainable, efficient, and well-documented code</li>
-                        <li><strong>Collaboration:</strong> Working in agile teams to deliver high-quality software</li>
-                        <li><strong>Continuous Learning:</strong> Staying updated with emerging technologies and best practices</li>
+                        <li><strong>Application Security:</strong> Building secure web and mobile applications</li>
+                        <li><strong>Network Security:</strong> Designing and securing network architectures</li>
+                        <li><strong>Secure DevOps:</strong> Integrating security into CI/CD pipelines</li>
+                        <li><strong>Threat Intelligence:</strong> Analyzing and mitigating emerging threats</li>
+                        <li><strong>Security Research:</strong> Exploring new vulnerabilities and defenses</li>
                     </ul>
                     
                     <p>
-                        I'm actively seeking internship opportunities and collaborative projects 
-                        where I can apply my skills, learn from experienced developers, and 
-                        contribute to meaningful technological advancements.
+                        I'm actively seeking opportunities where I can apply my security knowledge to real-world 
+                        challenges while continuing to grow as a cybersecurity professional.
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+                <p>Combining software development with security expertise</p>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="skill-category cybersecurity">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag cyber"><i class="fas fa-lock"></i> Network Security</span>
+                        <span class="skill-tag cyber"><i class="fas fa-user-secret"></i> Ethical Hacking</span>
+                        <span class="skill-tag cyber"><i class="fas fa-virus"></i> Malware Analysis</span>
+                        <span class="skill-tag cyber"><i class="fas fa-search"></i> Vulnerability Assessment</span>
+                        <span class="skill-tag cyber"><i class="fas fa-fire"></i> Firewall Configuration</span>
+                        <span class="skill-tag cyber"><i class="fas fa-key"></i> Cryptography</span>
+                        <span class="skill-tag cyber"><i class="fas fa-user-shield"></i> Access Control</span>
+                        <span class="skill-tag cyber"><i class="fas fa-file-contract"></i> Security Policies</span>
+                        <span class="skill-tag cyber"><i class="fas fa-bug"></i> Penetration Testing</span>
+                        <span class="skill-tag cyber"><i class="fas fa-chart-line"></i> Security Analytics</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category networking">
+                    <h3><i class="fas fa-network-wired"></i> Networking</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag network"><i class="fas fa-sitemap"></i> TCP/IP Protocols</span>
+                        <span class="skill-tag network"><i class="fas fa-wifi"></i> Wireless Security</span>
+                        <span class="skill-tag network"><i class="fas fa-server"></i> Network Administration</span>
+                        <span class="skill-tag network"><i class="fas fa-project-diagram"></i> Routing & Switching</span>
+                        <span class="skill-tag network"><i class="fas fa-cloud"></i> Cloud Networking</span>
+                        <span class="skill-tag network"><i class="fas fa-tachometer-alt"></i> Network Monitoring</span>
+                        <span class="skill-tag network"><i class="fas fa-broadcast-tower"></i> VPN Configuration</span>
+                        <span class="skill-tag network"><i class="fas fa-cogs"></i> DNS & DHCP</span>
+                        <span class="skill-tag network"><i class="fas fa-shield-alt"></i> Network Hardening</span>
+                        <span class="skill-tag network"><i class="fas fa-traffic-light"></i> QoS Implementation</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Software Development</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">HTML5/CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">API Development</span>
+                        <span class="skill-tag">Database Security</span>
+                        <span class="skill-tag">Secure Coding</span>
+                        <span class="skill-tag">UI/UX Principles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Training</h2>
+                <p>Formal recognition of my cybersecurity and networking expertise</p>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity Fundamentals</h3>
+                    <p>Comprehensive understanding of security principles, threat landscapes, and defense mechanisms.</p>
+                    <span class="cert-status">In Progress</span>
+                </div>
+                
+                <div class="cert-card">
+                    <h3><i class="fas fa-network-wired"></i> Network+ Preparation</h3>
+                    <p>Mastering network infrastructure, operations, security, and troubleshooting methodologies.</p>
+                    <span class="cert-status">In Progress</span>
+                </div>
+                
+                <div class="cert-card">
+                    <h3><i class="fab fa-python"></i> Python for Cybersecurity</h3>
+                    <p>Developing security tools and automation scripts using Python programming language.</p>
+                    <span class="cert-status">Completed</span>
+                </div>
+                
+                <div class="cert-card">
+                    <h3><i class="fas fa-user-secret"></i> Ethical Hacking Basics</h3>
+                    <p>Understanding penetration testing methodologies and vulnerability assessment techniques.</p>
+                    <span class="cert-status">Completed</span>
+                </div>
+            </div>
+            
+            <p class="text-center mt-2" style="color: rgba(255,255,255,0.7);">
+                Currently pursuing additional certifications in cloud security and advanced network defense.
+            </p>
         </div>
     </section>
 
@@ -748,58 +1053,59 @@
     <section id="projects">
         <div class="container">
             <div class="section-title">
-                <h2>My Projects</h2>
-                <p>A showcase of my recent work and technical capabilities</p>
+                <h2>Security & Development Projects</h2>
+                <p>Practical applications of my cybersecurity and development skills</p>
             </div>
             
             <div class="projects-grid">
-                <!-- Project 1 -->
+                <!-- Project 1 - Security Focused -->
                 <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-clock"></i>
+                    <div class="project-img cyber-bg">
+                        <i class="fas fa-shield-alt pulse"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Digital Time App</h3>
-                        <p>A functional digital time application built with Java, featuring a clean user interface and real-time updates. Demonstrates core Java programming concepts and GUI development.</p>
+                        <h3>Network Security Scanner</h3>
+                        <p>A Python-based network security scanner that identifies open ports, services, and potential vulnerabilities in network infrastructure. Includes automated reporting features.</p>
                         
                         <div class="project-tools">
-                            <span class="tool-tag">Java</span>
-                            <span class="tool-tag">Swing</span>
-                            <span class="tool-tag">GUI</span>
+                            <span class="tool-tag cyber">Python</span>
+                            <span class="tool-tag cyber">Nmap</span>
+                            <span class="tool-tag cyber">Network Security</span>
+                            <span class="tool-tag">Automation</span>
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            <a href="#" class="project-link cyber" target="_blank">
+                                <i class="fas fa-eye"></i> View Demo
                             </a>
-                            <a href="https://github.com/23004514" class="project-link secondary" target="_blank">
+                            <a href="https://github.com/23004514" class="project-link secondary cyber" target="_blank">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
+                <!-- Project 2 - Network Focused -->
                 <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="project-img network-bg">
+                        <i class="fas fa-network-wired"></i>
                     </div>
                     <div class="project-content">
-                        <h3>My First Website</h3>
-                        <p>A responsive personal website built from scratch using HTML and CSS. Features modern design principles, clean layout, and semantic markup for optimal accessibility.</p>
+                        <h3>Network Monitoring Dashboard</h3>
+                        <p>A real-time network monitoring dashboard that visualizes traffic flow, device status, and security events. Built with JavaScript and network analysis libraries.</p>
                         
                         <div class="project-tools">
-                            <span class="tool-tag">HTML5</span>
-                            <span class="tool-tag">CSS3</span>
-                            <span class="tool-tag">Responsive</span>
-                            <span class="tool-tag">Semantic HTML</span>
+                            <span class="tool-tag network">JavaScript</span>
+                            <span class="tool-tag network">Socket.IO</span>
+                            <span class="tool-tag network">Network Analysis</span>
+                            <span class="tool-tag">Real-time</span>
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="project-link" target="_blank">
+                            <a href="#" class="project-link" style="background: var(--cyber-purple);" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/23004514" class="project-link secondary" target="_blank">
+                            <a href="https://github.com/23004514" class="project-link secondary" style="border-color: var(--cyber-purple); color: var(--cyber-purple);" target="_blank">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
@@ -812,14 +1118,14 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-content">
-                        <h3>DealDeck Website</h3>
-                        <p>A fully functional e-commerce website with product listings, shopping cart functionality, and responsive design. Built using modern web technologies.</p>
+                        <h3>Secure E-commerce Platform</h3>
+                        <p>A fully functional e-commerce website with built-in security features including encryption, secure payment processing, and vulnerability protection mechanisms.</p>
                         
                         <div class="project-tools">
                             <span class="tool-tag">HTML5</span>
                             <span class="tool-tag">CSS3</span>
                             <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">E-commerce</span>
+                            <span class="tool-tag cyber">Security</span>
                         </div>
                         
                         <div class="project-links">
@@ -835,25 +1141,25 @@
                 
                 <!-- Project 4 -->
                 <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-barcode"></i>
+                    <div class="project-img cyber-bg">
+                        <i class="fas fa-user-secret"></i>
                     </div>
                     <div class="project-content">
-                        <h3>BarCode Generator</h3>
-                        <p>A web-based barcode generation tool that creates scannable barcodes from text input. Features customization options and download functionality.</p>
+                        <h3>Password Strength Analyzer</h3>
+                        <p>A security tool that evaluates password strength, checks against known breaches, and generates secure passwords using cryptographic principles.</p>
                         
                         <div class="project-tools">
-                            <span class="tool-tag">HTML5</span>
-                            <span class="tool-tag">CSS3</span>
-                            <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">JsBarcode</span>
+                            <span class="tool-tag cyber">JavaScript</span>
+                            <span class="tool-tag cyber">Cryptography</span>
+                            <span class="tool-tag cyber">Security</span>
+                            <span class="tool-tag">API Integration</span>
                         </div>
                         
                         <div class="project-links">
-                            <a href="https://23004514.github.io/BarCode/" class="project-link" target="_blank">
+                            <a href="#" class="project-link cyber" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/23004514/BarCode" class="project-link secondary" target="_blank">
+                            <a href="https://github.com/23004514" class="project-link secondary cyber" target="_blank">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
@@ -866,14 +1172,14 @@
                         <i class="fas fa-qrcode"></i>
                     </div>
                     <div class="project-content">
-                        <h3>QR Code Generator</h3>
-                        <p>An advanced QR code generator with customization options for colors, sizes, and content types. Supports multiple QR code formats and export options.</p>
+                        <h3>Secure QR Code Generator</h3>
+                        <p>An advanced QR code generator with security features including encrypted content, expiration dates, and usage tracking for secure data sharing.</p>
                         
                         <div class="project-tools">
                             <span class="tool-tag">HTML5</span>
                             <span class="tool-tag">CSS3</span>
                             <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">QR Code API</span>
+                            <span class="tool-tag cyber">Encryption</span>
                         </div>
                         
                         <div class="project-links">
@@ -881,6 +1187,33 @@
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                             <a href="https://github.com/23004514/QR-CODE" class="project-link secondary" target="_blank">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - New Cybersecurity Project -->
+                <div class="project-card">
+                    <div class="project-img network-bg">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Firewall Rule Manager</h3>
+                        <p>A web-based interface for managing firewall rules, monitoring traffic, and analyzing security policies with visualization of network flow and threat detection.</p>
+                        
+                        <div class="project-tools">
+                            <span class="tool-tag network">Python</span>
+                            <span class="tool-tag network">Flask</span>
+                            <span class="tool-tag network">Firewall</span>
+                            <span class="tool-tag">Web Interface</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link" style="background: var(--cyber-purple);" target="_blank">
+                                <i class="fas fa-eye"></i> View Demo
+                            </a>
+                            <a href="https://github.com/23004514" class="project-link secondary" style="border-color: var(--cyber-purple); color: var(--cyber-purple);" target="_blank">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
@@ -895,21 +1228,21 @@
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations, opportunities, or just a friendly chat</p>
+                <p>Interested in cybersecurity collaboration or secure development projects</p>
             </div>
             
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
+                    <h3>Security-Focused Opportunities</h3>
                     <p>
-                        I'm always excited to connect with fellow developers, potential collaborators, 
-                        or anyone interested in technology. Whether you have a project idea, opportunity, 
-                        or just want to discuss tech, don't hesitate to reach out!
+                        I'm particularly interested in roles and projects that combine software development 
+                        with cybersecurity principles. Whether it's building secure applications, conducting 
+                        security assessments, or designing resilient network architectures, I'm ready to contribute.
                     </p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon">
+                            <div class="contact-icon cyber">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
@@ -929,12 +1262,12 @@
                         </div>
                         
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-graduation-cap"></i>
+                            <div class="contact-icon cyber">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
                             <div>
-                                <h4>Education</h4>
-                                <p>BSc Computer Science (In Progress)</p>
+                                <h4>Security Focus</h4>
+                                <p>Application & Network Security</p>
                             </div>
                         </div>
                     </div>
@@ -949,27 +1282,30 @@
                         <a href="mailto:23004514@mvula.univen.ac.za" aria-label="Email" class="social-link">
                             <i class="fas fa-envelope"></i>
                         </a>
+                        <a href="#" aria-label="Security Blog" class="social-link">
+                            <i class="fas fa-blog"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="contact-info">
                     <h3>What I'm Looking For</h3>
                     <ul style="padding-left: 20px; margin-bottom: 1.5rem;">
-                        <li><strong>Internship Opportunities:</strong> Software development or web development roles</li>
-                        <li><strong>Collaborative Projects:</strong> Open source contributions or team projects</li>
-                        <li><strong>Learning Opportunities:</strong> Mentorship or knowledge exchange</li>
-                        <li><strong>Freelance Work:</strong> Web development projects and consulting</li>
+                        <li><strong>Security Engineering Roles:</strong> Application security, network security, or security operations</li>
+                        <li><strong>Secure Development:</strong> Building applications with security as a core feature</li>
+                        <li><strong>Security Research:</strong> Vulnerability analysis and threat intelligence</li>
+                        <li><strong>Cybersecurity Internships:</strong> Hands-on experience in security operations</li>
+                        <li><strong>Collaborative Projects:</strong> Open source security tools or research</li>
                     </ul>
                     
                     <p>
-                        I'm particularly interested in roles that allow me to work with modern 
-                        technologies, solve challenging problems, and grow as a developer while 
-                        contributing to meaningful projects.
+                        I'm eager to work on projects that challenge my security knowledge while allowing me 
+                        to develop practical solutions to real-world security problems.
                     </p>
                     
                     <div class="mt-2">
-                        <a href="mailto:23004514@mvula.univen.ac.za" class="project-link" style="display: inline-flex;">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                        <a href="mailto:23004514@mvula.univen.ac.za" class="project-link cyber" style="display: inline-flex;">
+                            <i class="fas fa-paper-plane"></i> Send Secure Message
                         </a>
                     </div>
                 </div>
@@ -982,11 +1318,13 @@
         <div class="container">
             <div class="footer-content">
                 <h3>Mulaudzi Konanani</h3>
-                <p>Software Engineer & Web Developer</p>
+                <p>Security-Focused Software Engineer</p>
                 
                 <div class="footer-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#certifications">Certifications</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -1005,7 +1343,7 @@
                 
                 <div class="copyright">
                     <p>&copy; 2023 Mulaudzi Konanani. All rights reserved.</p>
-                    <p>Portfolio v2.0 | Built with HTML, CSS, and JavaScript</p>
+                    <p>Secure Portfolio v2.1 | Built with security in mind</p>
                 </div>
             </div>
         </div>
@@ -1122,6 +1460,22 @@
             card.setAttribute('data-delay', index * 0.1);
             observer.observe(card);
         });
+        
+        // Observe skill categories
+        document.querySelectorAll('.skill-category').forEach((category, index) => {
+            category.setAttribute('data-delay', index * 0.2);
+            observer.observe(category);
+        });
+        
+        // Cybersecurity typing effect for subtitle
+        const subtitle = document.querySelector('.header-content .subtitle');
+        const originalText = subtitle.textContent;
+        const cyberText = "Software Engineer, Cybersecurity Specialist & Web Developer";
+        
+        // Optional: Add typing effect on page load
+        setTimeout(() => {
+            subtitle.textContent = cyberText;
+        }, 1000);
     </script>
 </body>
 </html>
